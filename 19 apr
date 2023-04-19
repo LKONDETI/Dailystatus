@@ -1,0 +1,38 @@
+https://degreed.com/pathway/k9517dkg83/pathway?newWindow=true
+
+
+what is swagger?
+develp APIs
+Interact with APIs
+Document APIs
+------------
+API technologies:
+SOAP- has WSDL for documentation
+REST-
+------
+what swagger do?
+adds the APi application meta to the swagger
+updating the documentation
+-----------
+adding swagger to spring boot
+- getting the swahher 2 spring depencies
+- enabling swagger in your code
+-configuraing swagger
+-adding details as annotations to APIs
+--------
+steps:
+
+- create a spring boot application
+- add Addressbook Resource( add annotations @getMapping,@PostMapping)
+-using postman can help for get and post
+---------
+steps for swagger2:
+
+- adding swagger 2 depencies in pom.xml
+-enabling swagger2
+- restart the swagger
+------------
+swagger-ui:
+
+swagger ui will dependency can help to create html documentation
+
