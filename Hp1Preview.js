@@ -4,8 +4,7 @@ import Picture1 from './Picture1.png'
 import book from "./book.png";
 import {AiOutlineUser, AiFillHourglass, AiOutlineMonitor, AiOutlineDesktop} from "react-icons/ai";
 import {IoMdNotificationsOutline} from "react-icons/io";
-import {Button, Card, CardBody, CardLink, CardText} from "reactstrap";
-import { Collapse } from "react-collapse";
+import {Button, Card, CardBody, CardText, Popover, PopoverHeader, PopoverBody} from "reactstrap";
 import { useState } from "react";
 
 import './Hp1Preview.css';
@@ -26,6 +25,8 @@ function Hp1Preview(){
   };
 
   const [visible, isVisible] =React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
 
   return(
     <div >
@@ -64,7 +65,15 @@ function Hp1Preview(){
         The main story arc concerns Harry's struggle against Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic and subjugate all wizards and Muggles (non-magical people).
           </CardText>
           <Button onClick={()=>isVisible(!visible)} style={{marginLeft:'200px', border:'none'} }> Read More</Button>
-          <Button style={{marginLeft:'400px', border:'none'}}>Recommend to the colleague</Button>
+          <Button id="popoverButton" style={{marginLeft:'400px', border:'none'}} onClick={()=>setIsOpen(!isOpen)}> Recommend to colleague </Button>
+
+          <Popover placement="bottom" isOpen={isOpen} target="popoverButton" toggle={() => setIsOpen(!isOpen)}>
+          <PopoverHeader>Enter Email Id</PopoverHeader>
+          <PopoverBody><label style={{marginBottom:'10px'}}><input type="text" placeholder="enter email"/></label><br/>
+                        <Button style={{backgroundColor:'#0c1524', color:'white'}}>Send</Button>
+          </PopoverBody>
+          </Popover>
+          
         </CardBody>
         </Card>
         
