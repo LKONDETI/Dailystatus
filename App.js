@@ -1,23 +1,16 @@
+
 import './App.css';
-import Login from './components/Auth/Login';
-import Logout from './components/Auth/Logout';
-import Surfebooks from './components/SurfEBook/Surf-e-books';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+//import TeamGenerator from './TeamGenerator';
+import Grps from './divideGrps';
 
 function App() {
+
+    
   return (
-
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Login/>} />
-        <Route path ='/logout' element={<Logout/>} ></Route>
-          <Route path='/surf' element={<Surfebooks/>}></Route>
-
-    </Routes>
-    </BrowserRouter>
-
-  )  
-      
+    <div className="App">
+      <Grps/>
+      </div>
+  );
 }
 
 export default App;
