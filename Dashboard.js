@@ -5,10 +5,7 @@ import book from "./book.png";
 import { AiFillHourglass, AiOutlineMonitor, AiOutlineDesktop} from "react-icons/ai";
 import {IoMdNotificationsOutline} from "react-icons/io";
 import {CgProfile} from "react-icons/cg";
-
-
-
-import './Dashboard.css';
+import Quiz from "./quizdata";
 
 function Dashboard(){
 
@@ -47,11 +44,49 @@ function Dashboard(){
             </ul>
         </div>   
 </nav>
-      <div class="buttonContainer" style={{paddingTop:'30px',width:'180px'}}>
+      <div style={{paddingTop:'30px',width:'180px', height:'10vh',backgroundColor:'#0c1524'}}>
         <button style={leftButton}><a href="http://localhost:3000/dashboard" ><AiOutlineDesktop/>Dashboard</a></button>
         <button style={leftButton}><a href="http://localhost:3000/surf"><AiOutlineMonitor/> Surf-e-books</a>  </button>
         <button style={{backgroundColor:'#0c1524',border:'none',fontSize:'16px',color:'white',height:'50px',textAlign:'left',width:'180px', paddingBottom:'500px'}}>
         <a href="http://localhost:3000/takequiz"><AiFillHourglass/> Take Quiz </a></button>
+      </div>
+      
+      <div class="container">
+        <div class="row gap-4" style={{marginLeft:'150px'}}>
+          {/* Total Points container */}
+          <div class=" shadow rounded-4 col p-1 border border-dark border border-2">
+            <h6 class="text-center">Total Points</h6>
+            <div class="d-flex p-3">
+            <p>Points scored by Subcriptions</p>
+            <div class="rounded-circle border border-4 border border-danger p-4" style={{width:'120px'}}><h6 class="text-center">200</h6></div>
+            </div></div>
+            {/*Books Subcription container */}
+            <div class=" shadow rounded-4 col p-1 border border-dark border border-2">
+            <h6 class="text-center">Books Subcribed</h6>
+            <div class="d-flex p-3">
+            <p>Number of Books read</p>
+            <div class="rounded-circle border border-4 border border-primary p-4" style={{width:'120px'}}><h6 class="text-center">2</h6></div>
+            </div></div>
+            {/* Active books Subcription container */}
+            <div class=" shadow rounded-4 col p-1 border border-dark border border-2">
+            <h6 class="text-center">Active Subcriptions</h6>
+            <div class="d-flex p-3">
+            <p>Number of books currently reading</p>
+            <div class="rounded-circle border border-4 border border-success p-4" style={{width:'120px'}}><h6 class="text-center">1</h6></div>
+            </div></div>
+            {/* next row */}
+            <div class="row gap-4">
+              {/* table of top subcriptions */}
+            <div class=" shadow rounded-4 col p-1 border border-dark border border-2">
+            <h6 class="text-center">Top subcriptions by time</h6>
+            </div>
+            {/* Trend Chart */}
+            <div class=" shadow rounded-4 col p-1 border border-dark border border-2">
+            <h6 class="text-center">Trend Charts</h6>
+            </div>
+            </div>
+        </div>
+
       </div>
       </div>
   )

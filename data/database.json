@@ -1,0 +1,42 @@
+{
+    "cards": [
+      {
+        "id": 1,
+        "Name": "Harry Potter & the half blood prince",
+        "Author": "Author:J.K.Rowling",
+        "Cathegory": "Cathegory:Novel"
+  
+      },
+      {
+        "id": 2,
+        "Name": "Harry Potter & the prisoniors of Azkaban",
+        "Author": "Author:J.K.Rowling",
+        "Cathegory": "Cathegory:Novel"
+      },
+      {
+        "id": 3,
+        "Name": "Harry Potter & the deathly hallows part-1",
+        "Author": "Author:J.K.Rowling",
+        "Cathegory": "Cathegory:Novel"
+      },
+      {
+        "id": 4,
+        "Name": "Interstellar",
+        "Author": "Author:J.K.Borrow",
+        "Cathegory": "Cathegory:Sci-fi"
+      },
+      {
+        "id": 5,
+        "Name": "Corporate Chanakya",
+        "Author": "Author:R.K.Pillai",
+        "Cathegory": "Cathegory:Management"
+      },
+      {
+        "id": 6,
+        "Name": "Learn Angular in 24 Hrs",
+        "Author": "Author:R.K.L.K.Thota",
+        "Cathegory": "Cathegory:Technical"
+      }
+      
+    ]
+  }

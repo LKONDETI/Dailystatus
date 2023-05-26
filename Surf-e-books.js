@@ -1,141 +1,71 @@
-import React from "react";
+import React from 'react';
 import HP1 from "./HP1.png";
+import Picture1 from './Picture1.png'
 import book from "./book.png";
-import {AiOutlineUser, AiFillHourglass, AiOutlineMonitor, AiOutlineDesktop} from "react-icons/ai";
+import { AiFillHourglass, AiOutlineMonitor, AiOutlineDesktop} from "react-icons/ai";
 import {IoMdNotificationsOutline} from "react-icons/io";
-import {Card, CardBody, CardLink, CardText, CardHeader, CardDeck, Row, Col} from "reactstrap";
-import IS from "./IS.png";
-import CC from "./CC.png";
-import LAin24hrs from "./LAin24hrs.png";
+import {CgProfile} from "react-icons/cg";
 
-import './Surf-e-books.css';
-import { CardImg } from "reactstrap";
+import CComponent from './CardComponent';
 
 function surfEBooks(){
 
+  const leftButton = {
+    backgroundColor:'#0c1524', 
+    border :'none',
+    fontSize :'16px',
+    color :'white',
+    height :'50px', 
+    width :'180px',
+    textAlign :'left'
+  };
+  function btnClick() {
+    window.open("http://localhost:3000/dashboard");
+}
 
   return(
     <div >
-        <div class="box">
-          <div class="one">
-          <img src={book} style={{width:'40px', height:'40px', borderRadius:'50%',backgroundColor:'white',float: 'left'}}/>
-          <p style={{color:'white',align:'top', fontSize:'30px'}}>E-Library</p>
-          <p style={{color:'white'}}>powered by Capgemini</p></div>
-          <div class="three"> <a href="http://localhost:3000/logout" ><AiOutlineUser/> </a></div>
-          <div class="two"><IoMdNotificationsOutline/> </div>
-      </div>
-
-      <div class="right-container">
-        <button style={{backgroundColor:'#0c1524', border:'none',fontSize:'16px',color:'white',height:'50px'}}> <AiOutlineDesktop/> Dashboard </button>
-        <button style={{backgroundColor:'#0c1524',border:'none',fontSize:'16px',color:'white',height:'50px'}}><AiOutlineMonitor/> Surf-e-books </button>
-        <button style={{backgroundColor:'#0c1524',border:'none',fontSize:'16px',color:'white',height:'50px'}}><AiFillHourglass/> Take Quiz </button>
-      </div>
-
+        <nav class="navbar navbar-expand-md" style={{backgroundColor: "#0c1524"}}>
+    <div class="container-fluid">
+      <a class="navbar-brand">
+      <img src={book} style={{width:'40px', height:'40px', borderRadius:'50%',backgroundColor:'white',float: 'left'}}/>
+            <h3 style={{color:'white',align:'top'}}>E-Library</h3>
+            <p style={{color:'white',marginLeft:'30px'}}>powered by <img src={Picture1}/></p>
+            </a>
      
-        <div class="filter">
-            <div style={{alignSelf:'center'}}>E-book Filter</div>
-            <div><label style={{ width: '200px',height: '30px',fontSize: '16px'}}><input type="search" placeholder="search by Name" /></label> </div>
-            <div><label style={{ width: '200px',height: '30px',fontSize: '16px'}}><input type="search" placeholder="search by Category" /></label></div>
-            <div><label style={{ width: '200px',height: '30px',fontSize: '16px'}}><input type="search" placeholder="search by Author" /></label></div>
-            <div><button>Filter</button></div>
-          
-        </div>
-        <div class="flex-container">
-        
-        <div class="flex-item1">
-          <Card style={{width:'20rem',backgroundColor: "#192841", color:'white'}}>
-          <CardBody>
-          <CardImg  src={HP1} style={{width:'5rem', float:'right',paddingTop:'55px'}}/>
-          <CardHeader style={{fontSize:'18px',textAlign:'center'}}>Harry Potter & the half blood prince</CardHeader>
-          <CardText style={{fontSize:'12px'}}>
-          Author:J.K.Rowling<br/>
-          Cathegory:Novel
-          </CardText>
-          <CardLink href="http://localhost:3000/hp1">Preview</CardLink>
-          <CardLink href="http://localhost:3000/subcribehp1">Subcribe now</CardLink>
-        </CardBody>
-        </Card>
-      </div>
-        <CardDeck/>
-      <div class="flex-item2">
-        <Card style={{width:'20rem',backgroundColor: "#192841", color:'white'}}>
-        <CardBody>
-        <CardImg src={HP1} style={{width:'5rem', float:'right',paddingTop:'55px'}}/>
-        <CardHeader style={{fontSize:'18px', textAlign:'center'}}>Harry Potter & the prisoniors of Azkaban</CardHeader>
-        <CardText style={{fontSize:'12px'}}>
-        Author:J.K.Rowling<br/>
-        Cathegory:Novel
-        </CardText>
-        <CardLink href="#">Preview</CardLink>
-        <CardLink href="#">Subcribe now</CardLink>
-        </CardBody>
-        </Card>
-      </div>
-        <CardDeck/>
-      <div class="flex-item3"> 
-        <Card style={{width:'20rem',backgroundColor: "#192841", color:'white'}}>
-        <CardBody>
-        <CardImg  src={HP1} style={{width:'5rem', float:'right',paddingTop:'55px'}}/>
-        <CardHeader style={{fontSize:'18px',textAlign:'center'}}>Harry Potter & the deathly hallows part 1 </CardHeader>
-        <CardText style={{fontSize:'12px'}}>
-        Author:J.K.Rowling<br/>
-        Cathegory:Novel
-        </CardText>
-        <CardLink href="#">Preview</CardLink>
-        <CardLink href="#">Subcribe now</CardLink>
-        </CardBody>
-        </Card>
-        </div>
-        </div>  
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"  aria-label="Toggle navigation"
+        aria-controls="navbarSupportedContent" aria-expanded="false" data-mdb-target="#navbarSupportedContent">
+            <i class="fas fa-bars"></i>
+        </button>
 
-        <div class="flex-container">
-        
-        <div class="flex-item1">
-          <Card style={{width:'20rem',backgroundColor: "#192841", color:'white'}}>
-          <CardBody>
-          <CardImg  src={IS} style={{width:'5rem', float:'right',paddingTop:'55px'}}/>
-          <CardHeader style={{fontSize:'18px',textAlign:'center'}}>Interstellar</CardHeader>
-          <CardText style={{fontSize:'12px'}}>
-          Author:J.K.Borrow<br/>
-          Cathegory:Sci-fi
-          </CardText>
-          <CardLink href="#">Preview</CardLink>
-          <CardLink href="#">Subcribe now</CardLink>
-        </CardBody>
-        </Card>
+            <ul class="navbar-nav d-flex flex-row me-1">
+                <li class="nav-item me-3 me-lg-0">
+                    <a class="nav-link text-white" href="#" style={{fontSize:'30px'}}><IoMdNotificationsOutline/></a>
+                </li>
+                <li class="nav-item me-3 me-lg-0">
+                    <a class="nav-link text-white" href="http://localhost:3000/logout" style={{fontSize:'30px'}}><CgProfile/></a>
+                </li>
+            </ul>
+        </div>   
+</nav>
+      <div style={{paddingTop:'30px',width:'180px', height:'10vh',backgroundColor:'#0c1524'}}>
+        <button style={leftButton} onClick={btnClick}><AiOutlineDesktop/>Dashboard</button>
+        <button style={leftButton}><a href="http://localhost:3000/surf"><AiOutlineMonitor/> Surf-e-books</a>  </button>
+        <button style={{backgroundColor:'#0c1524',border:'none',fontSize:'16px',color:'white',height:'50px',textAlign:'left',width:'180px', paddingBottom:'500px'}}>
+        <a href="http://localhost:3000/takequiz"><AiFillHourglass/> Take Quiz </a></button>
       </div>
-        <CardDeck/>
-      <div class="flex-item2">
-        <Card style={{width:'20rem',backgroundColor: "#192841", color:'white'}}>
-        <CardBody>
-        <CardImg src={CC} style={{width:'5rem', float:'right',paddingTop:'55px'}}/>
-        <CardHeader style={{fontSize:'18px', textAlign:'center'}}>Corporate Chanakya</CardHeader>
-        <CardText style={{fontSize:'18px'}}>
-        Author:R.K.Pillai<br/>
-        Cathegory:Management
-        </CardText>
-        <CardLink href="#">Preview</CardLink>
-        <CardLink href="#">Subcribe now</CardLink>
-        </CardBody>
-        </Card>
-      </div>
-        <CardDeck/>
-      <div class="flex-item3"> 
-        <Card style={{width:'20rem',backgroundColor: "#192841", color:'white'}}>
-        <CardBody>
-        <CardImg  src={LAin24hrs} style={{width:'5rem', float:'right',paddingTop:'55px'}}/>
-        <CardHeader style={{fontSize:'18px',textAlign:'center'}}>Learn Angular in 24 Hrs</CardHeader>
-        <CardText style={{fontSize:'12px'}}>
-        Author:L.K.Thota<br/>
-        Cathegory:Technical
-        </CardText>
-        <CardLink href="#">Preview</CardLink>
-        <CardLink href="#">Subcribe now</CardLink>
-        </CardBody>
-        </Card>
-        </div>
-        </div>
-     
+
+       <div class="p-3 text-center bg-light border border-dark" style={{marginTop:'0px',marginLeft:'210px', paddingBottom:'30px', width:'175vh'}}>
+          <p class="mb-3">E-Library Filter</p>
+          <form class="d-flex justify-content-evenly"> 
+          <input class="form-control me-2" type="search" placeholder="Search by Name" aria-label="Search" />
+          <input class="form-control me-2" type="search" placeholder="Search by Category" aria-label="Search" />
+          <input class="form-control me-2" type="search" placeholder="Search by Author" aria-label="Search" />
+          <button class="btn btn-outline-secondary" type="submit">Filter</button>
+          </form>
+        </div>   
+
+      {/* <div><CComponent/></div> */}
 
     </div>
 
