@@ -1,42 +1,73 @@
 {
-    "cards": [
-      {
-        "id": 1,
-        "Name": "Harry Potter & the half blood prince",
-        "Author": "Author:J.K.Rowling",
-        "Cathegory": "Cathegory:Novel"
-  
-      },
-      {
-        "id": 2,
-        "Name": "Harry Potter & the prisoniors of Azkaban",
-        "Author": "Author:J.K.Rowling",
-        "Cathegory": "Cathegory:Novel"
-      },
-      {
-        "id": 3,
-        "Name": "Harry Potter & the deathly hallows part-1",
-        "Author": "Author:J.K.Rowling",
-        "Cathegory": "Cathegory:Novel"
-      },
-      {
-        "id": 4,
-        "Name": "Interstellar",
-        "Author": "Author:J.K.Borrow",
-        "Cathegory": "Cathegory:Sci-fi"
-      },
-      {
-        "id": 5,
-        "Name": "Corporate Chanakya",
-        "Author": "Author:R.K.Pillai",
-        "Cathegory": "Cathegory:Management"
-      },
-      {
-        "id": 6,
-        "Name": "Learn Angular in 24 Hrs",
-        "Author": "Author:R.K.L.K.Thota",
-        "Cathegory": "Cathegory:Technical"
-      }
-      
-    ]
-  }
+  "cards": [
+    {
+      "id": 1,
+      "Name": "Harry Potter & the half blood prince",
+      "Author": "Author:J.K.Rowling",
+      "Cathegory": "Cathegory:Novel",
+      "Image": "https://www.themoviedb.org/t/p/original/z7uo9zmQdQwU5ZJHFpv2Upl30i1.jpg"
+    },
+    {
+      "id": 2,
+      "Name": "Harry Potter & the prisoniors of Azkaban",
+      "Author": "Author:J.K.Rowling",
+      "Cathegory": "Cathegory:Novel",
+      "Image": "https://www.themoviedb.org/t/p/w1280/1lFuyRbEoGnFdOrGuAbGZ9EbOFm.jpg"
+    },
+    {
+      "id": 3,
+      "Name": "Harry Potter & the deathly hallows part 1",
+      "Author": "Author:J.K.Rowling",
+      "Cathegory": "Cathegory:Novel",
+      "Image": "https://www.themoviedb.org/t/p/w1280/pCc6IKZfRAxGbKarQNyqa6YEtIq.jpg"
+    },
+    {
+      "id": 4,
+      "Name": "Interstellar",
+      "Author": "Author:J.K.Borrow",
+      "Cathegory": "Cathegory:Sci-fi",
+      "Image": "https://www.themoviedb.org/t/p/w1280/qUZiVjFBd67WKktIrjJ9H3tesyo.jpg"
+    },
+    {
+      "id": 5,
+      "Name": "Corporate Chanakya",
+      "Author": "Author:R.K.Pillai",
+      "Cathegory": "Cathegory:Management",
+      "Image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1337132993i/8828998.jpg"
+    },
+    {
+      "id": 6,
+      "Name": "Learn Angular in 24 Hrs",
+      "Author": "Author:R.K.L.K.Thota",
+      "Cathegory": "Cathegory:Technical",
+      "Image": "https://m.media-amazon.com/images/I/51yeSub2miL._SX198_BO1,204,203,200_QL40_FMwebp_.jpg"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "admin123"
+    },
+    {
+      "id": 2,
+      "username": "user",
+      "password": "user123"
+    },
+    {
+      "username": "sravanikondeti4@gmail.com",
+      "password": "sravani",
+      "id": 3
+    },
+    {
+      "username": "LKONDETI",
+      "password": "sravani",
+      "id": 4
+    },
+    {
+      "username": "sravanikondeti@gmail.com",
+      "password": "sra123",
+      "id": 5
+    }
+  ]
+}

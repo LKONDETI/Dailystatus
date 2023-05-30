@@ -1,99 +1,78 @@
-import React, { useState } from 'react';
-import { Col, FormGroup,Label } from "reactstrap";
+import React from "react";
+import { useState } from "react";
+import axios from "axios";
 import book from './book.png';
-import Picture1 from './Picture1.png';
+import Picture1 from './Picture1.png'
 
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+function Signin(){
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (event) => {
-    //alert('login!');
-    event.preventDefault();
-    // TODO: Handle login logic
-  };
+    const handleLogin = async () => {
+        try {
+          const response = await axios.get(`http://localhost:8000/users?username=${username}&password=${password}`);
+          const user = response.data[0];
+          if (user) {
+            // Successful login, you can handle the redirection or set authentication state here
+            alert('Login successful');
+            window.location.href="/dashboard";
+          } else {
+            setErrorMessage('Invalid username or password');
+          }
+        } catch (error) {
+          console.error('Error logging in:', error);
+        }
+      };
+return(
+    <section class="vh-150 gradient-custom bg-image" 
+    style={{
+    backgroundImage:"url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/015.webp')"}}
+    >
+  <div class="container py-5 mh-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card text-white" style={{borderRadius: '1rem',backgroundColor:"#0c1524"}}>
+          <div class="card-body p-5 text-center">
 
-  const containerStyle = {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor:'#192841',
-    padding:'140px'
-  }
+            <div class="mb-md-5 mt-md-4 pb-5">
 
-  const inputStyle = {
-    width: '500px',
-    height: '30px',
-    fontSize: '16px'
-  };
+              <h2 class="fw-bold mb-2 text-uppercase"><img src={book} style={{borderRadius:'50%', backgroundColor:'white'}}/> E-Library</h2>
+              <h6 class="text-white-50 mb-5">powered by <img src={Picture1}/></h6>
 
-    const buttonStyle = {
-      backgroundColor: 'grey',
-      width: '70px',
-      height: '30px',
-      fontSize: '18px'
-      
-    };
+                {/* username */}
+              <div class="form-outline form-white mb-4">
+                <input type="email" 
+                class="form-control form-control-lg"
+                placeholder="Email/SSO"
+                value={username}
+                onChange={e => setUsername(e.target.value)}
+                />
+              </div>
+              
+                {/* password */}
+              <div class="form-outline form-white mb-4">
+                <input type="password"  
+                class="form-control form-control-lg" 
+                placeholder="Password"
+                value={password}
+                onChange={e => setPassword(e.target.value)} />
+              </div>
 
-    const paragraphStyle = {
-      color: 'white',
-      fontSize:'19px',
-      padding:'auto'
-    };
-    
-    const imageStyle={
-      borderRadius:'80%', 
-      backgroundColor:'white',
-      float: 'left',
-      height: '100px',
-    };
-
-
-  return (
-    
-    <div className="login-container" style={containerStyle}>
-      <div><img src={book} style={imageStyle}/></div>
-      <form className="login-form" onSubmit={handleSubmit}>
-      <FormGroup row>   
-              <h1 style={paragraphStyle}>E- library</h1>
-              <p style={paragraphStyle}> powered by</p>
-              <img src={Picture1} alt="Picture1" style={{float:'right'}}/>
-        <Col lg={20}>
-        <label htmlFor="email" style={inputStyle}></label>
-        <input
-          type="email"
-          id="email"
-          placeholder="email/SSO Id"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-         </Col>
-          </FormGroup>
-
-        <FormGroup row>
-        <Col xs={12} md={8}>
-        <label htmlFor="password" style={inputStyle}></label>
-        <input
-          type="password"
-          id="password"
-          placeholder="password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
-        </Col>
-        </FormGroup>
-
-        <button type="submit"
-        size="md"
-        className="btn btn-outline-info shadow-sm btn-block rounded"
-        style={buttonStyle}
-        >
-           <a href="http://localhost:3000/surf"> Login</a>
-            </button>
-      </form>
+                {/* submit */}
+              <button class="btn btn-outline-light btn-lg px-5" type="submit" onClick={handleLogin}>Login</button>
+              {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+              <p class="mb-0">Don't have an account? <a href="http://localhost:3000/signup" class="text-white-50 fw-bold">Sign Up</a>
+              </p>
+            </div>
+            <footer style={{fontSize:'10px'}}>Capgemini Public</footer>
+          </div>
+        </div>
+      </div>
     </div>
-    
-  );
+  </div>
+</section>
+)
 }
 
-export default Login;
+export default Signin;
