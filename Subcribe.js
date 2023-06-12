@@ -1,49 +1,44 @@
 import React,{useState} from "react";
 import HP1 from "./HP1.png";
-import Picture1 from './Picture1.png'
-import book from "./book.png";
-import {AiOutlineUser, AiFillHourglass, AiOutlineMonitor, AiOutlineDesktop} from "react-icons/ai";
-import {IoMdNotificationsOutline} from "react-icons/io";
-import {Button, Card, CardBody, CardLink, CardText} from "reactstrap";
-import {Row, Col} from 'reactstrap';
-
-import './Subcribe.css';
+import {Button, Card, CardBody, CardText} from "reactstrap";
 import { CardImg } from "reactstrap";
+import NavSideBars from "../Auth/NavSideBars";
 
 function Subcribe(){
+  const [points,SetPoints] = useState(200);
+  const [count,Setcount] = useState(1);
+  const [isSubscribed, setIsSubscribed] = useState(false);
 
-  
 
-  const leftButton = {
-    backgroundColor:'#0c1524', 
-    border :'none',
-    fontSize :'16px',
-    color :'white',
-    height :'50px', 
-    width :'180px',
-    textAlign :'left'
+  const ContainerStyle={
+    marginLeft: '200px',
+    height : '50vh',
+    width: '175vh',
+    boxShadow: '0 4px 8px 0 rgba(13, 8, 57, 0.2), 0 6px 20px 0 rgba(17, 4, 46, 0.19)'
+    }
+
+  const handleSaveAndDownload = () => {
+    window.print();
+    Setcount(count+1);
+    localStorage.setItem("count",count);
+    console.log(count);
+    SetPoints(points+200);
+    localStorage.setItem("points",points);
+    console.log(points);
+  };
+  const handleSubscribe = () => {
+    setshow(!show)
+    setIsSubscribed(true);
   };
 
+  
   const [show, setshow] =React.useState(false);
-
+  
   return(
-    <div >
-        <div class="box">
-          <div class="one">
-          <img src={book} style={{width:'40px', height:'40px', borderRadius:'50%',backgroundColor:'white',float: 'left'}}/>
-          <p style={{color:'white',align:'top', fontSize:'25px'}}>E-Library</p>
-          <p style={{color:'white',marginLeft:'30px'}}>powered by <img src={Picture1}/></p></div>
-          <div class="three"> <a href="http://localhost:3000/logout" ><AiOutlineUser/> </a></div>
-          <div class="two"><IoMdNotificationsOutline/> </div>
-      </div>
-      <div class="buttonContainer" style={{paddingTop:'30px',width:'180px'}}>
-        <button style={leftButton}> <a href="http://localhost:3000/dashboard" ><AiOutlineDesktop/>Dashboard</a></button>
-        <button style={leftButton}><a href="http://localhost:3000/surf"><AiOutlineMonitor/> Surf-e-books</a> </button>
-        <button style={{backgroundColor:'#0c1524',border:'none',fontSize:'16px',color:'white',height:'50px',textAlign:'left',width:'180px', paddingBottom:'500px'}}>
-        <a href="http://localhost:3000/takequiz"><AiFillHourglass/> Take Quiz </a></button>
-      </div>
+    <div>
+         <div><NavSideBars/></div>
 
-        <div class="card1">
+        <div class="d-flex flex-column justify-content-center border border-2 border border-dark rounded-2 " style={ContainerStyle}>
         <h1 style={{fontSize:'18px',textAlign:'center'}}>Active Subscriptions List</h1>
         <div style={{margin:'10px'}}>
           <Card style={{backgroundColor:'#0c1524',color:'white'}}>
@@ -62,32 +57,30 @@ function Subcribe(){
         The novels chronicle the lives of a young wizard, Harry Potter, and his friends Hermione Granger and Ron Weasley, all of whom are students at Hogwarts School of Witchcraft and Wizardry. 
         The main story arc concerns Harry's struggle against Lord Voldemort, a dark wizard who intends to become immortal, overthrow the wizard governing body known as the Ministry of Magic and subjugate all wizards and Muggles (non-magical people).
           </CardText>
-          <Button onClick={()=>setshow(!show)} style={{marginLeft:'160px'}}> Subcribe</Button>
-         
+          <div class='btn btn-outline-light' onClick={handleSubscribe} style={{marginLeft:'160px'}}>  {isSubscribed ? 'Subscribed' : 'Subscribe'}</div>
+       
         </CardBody>
         </Card>
-      </div>
+      </div></div>
       
         {show&&(
-        <div class="card2"> 
+        <div class="border border-2 border border-dark rounded-2 text-center" 
+        style={{marginLeft:'200px',marginTop:'25px',maxHeight:'50vh',width:'175vh',boxShadow: '0 4px 8px 0 rgba(13, 8, 57, 0.2), 0 6px 20px 0 rgba(17, 4, 46, 0.19)'}}> 
         <h1 style={{fontSize:'18px',textAlign:'center'}}>Harry Potter & the half blood prince(Subcription Form)</h1>
-        <div style={{margin:'10px'}}>
-          <Row style={{marginTop:'30px'}}>
-            <Col><input type="text" placeholder="Enter Global Id"/></Col>
-            <Col><b>Name</b> <input type="text" placeholder="name"/> </Col>
-            <Col><b>Grade</b><input type="text" placeholder="grade"/></Col>
-          </Row>
-          <Row style={{marginTop:'20px'}}>
-            <Col><b>Joining Date</b> <input type="date"/></Col>
-            <Col><b>Employee Id</b> <input type="number" placeholder="Employee Id"/></Col>
-            <Col><b>Supervisior</b> <input type="text" placeholder="supervisior"/></Col>
-          </Row>
-          <Row><Col xs='3'><Button style={{marginLeft:'70vh',backgroundColor:'#0c1524', width :'30vh', marginTop:'20px'}}>Save & Download</Button></Col></Row>
+        <div class="container" style={{margin:'10px'}}>
+          <div class="row" style={{marginTop:'30px'}}>
+            <div class="col"><input type="text" placeholder="Enter Global Id"/></div>
+            <div class="col"><b>Name</b> <input type="text" placeholder="name"/> </div>
+            <div class="col"><b>Grade</b><input type="text" placeholder="grade"/></div>
+          </div>
+          <div class="row" style={{marginTop:'20px'}}>
+            <div class="col"><b>Joining Date</b> <input type="date"/></div>
+            <div class="col"><b>Employee Id</b> <input type="number" placeholder="Employee Id"/></div>
+            <div class="col"><b>Supervisior</b> <input type="text" placeholder="supervisior"/></div>
+            </div>
+          <div class="row"><div class="col-xs-3"><Button style={{backgroundColor:'#0c1524', width :'30vh', marginTop:'20px'}} onClick={handleSaveAndDownload}>Save & Download</Button></div></div>
         </div> </div>)}
         
-
-   
-    </div>
     </div>
 
   )
